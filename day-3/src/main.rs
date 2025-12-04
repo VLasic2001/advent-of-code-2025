@@ -33,15 +33,15 @@ fn find_positions(bank: &str) -> String {
         if i > 0 {
             start_index = res_index[i - 1] + 1;
         }
-        let str = &bank[(start_index as usize)..(skips + start_index as usize + 1)];
+        let str = &bank[(start_index)..(skips + start_index+ 1)];
         for (j, char) in str.chars().enumerate() {
             let num = char as i64 - 0x30;
-            if num > res[i] as i64 {
+            if num > res[i] {
                 res[i] = num;
-                res_index[i] = start_index + j as i64;
+                res_index[i] = start_index + j;
             }
         }
-        skips -= res_index[i] as usize - start_index as usize;
+        skips -= res_index[i] - start_index;
     }
 
     let mut result_str = res[0].to_string();
