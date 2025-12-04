@@ -25,7 +25,7 @@ fn main() {
 
 fn find_positions(bank: &str) -> String {
     let mut res = [0; NUM_OF_BATTERIES];
-    let mut res_index: [i64; 12] = [0; NUM_OF_BATTERIES];
+    let mut res_index = [0; NUM_OF_BATTERIES];
     let mut skips = bank.len() - NUM_OF_BATTERIES;
     
     for i in 0..NUM_OF_BATTERIES {
