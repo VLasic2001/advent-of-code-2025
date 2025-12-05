@@ -24,7 +24,6 @@ fn main() {
 
 fn move_dial(dial: &mut i32, direction: &str, amount: &i32, counter: &mut i32) {
     if direction.contains("L") {
-        //5-210=-205
         let times_passed = -(*dial - *amount) / 100;
         let new_dial = (*dial - *amount + (times_passed+1)*100 ) % 100;
         if amount >= dial {
